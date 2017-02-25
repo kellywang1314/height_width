@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#test{
+			margin: 10px;
+			border: 20px solid #e5e5e5;
+			padding: 30px;
+			height: 40px;
+			width: 40px;
+			background: blue;
+			overflow-y: scroll;
+		}
+		body{
+			margin: 30px auto;
+			border: 20px solid #e5e5e5;
+			padding: 10px;
+			height: 160px;
+			width: 160px;
+			overflow: scroll;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="test">
+	some</br>some</br>some</br>some</br>some</br>some</br>some</br>some</br>some</br>
+	</div>
+</body>
+<script type="text/javascript">
+	var test = document.getElementById("test");
+	console.log("------------------------");
+	console.log('clientWidth:'+test.clientWidth);
+	console.log('clientHeight:'+test.clientHeight); 
+	console.log('clientLeft:'+test.clientLeft);   
+	console.log('clientTop:'+test.clientTop);  
+	console.log("------------------------");
+	console.log('offsetWidth:'+test.offsetWidth);
+	console.log('offsetHeight:'+test.offsetHeight);
+	console.log('offsetLeft:'+test.offsetLeft);   
+	console.log('offsetTop:'+test.offsetTop); 
+	console.log("------------------------");
+	console.log('scrollWidth:'+test.scrollWidth);
+	console.log('scrollHeight:'+test.scrollHeight);
+	//test.scrollTop = 20;     //scrollTop是可读写的
+	console.log('scrollLeft:'+test.scrollLeft);   
+	console.log('scrollTop:'+test.scrollTop);
+
+</script>
+</html>
