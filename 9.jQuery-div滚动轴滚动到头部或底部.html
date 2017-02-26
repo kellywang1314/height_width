@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div滚动轴滚动到头部或底部</title>
+	<script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div id="scrollDiv">
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</div>
+</body>
+<style>
+	#scrollDiv{
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin: 100px auto 100px auto;
+		padding: 10px;
+		overflow-y: scroll;
+	}
+</style>
+<script>
+	var showId = document.getElementById("scrollDiv");
+	$("#scrollDiv").scroll(function(){
+		var clientheight = $(showId).innerHeight();  
+		var scrollTop = $(showId).scrollTop();
+		var wholeHeight = showId.scrollHeight;   //原生JavaScript
+		console.log(wholeHeight);
+		console.log(scrollTop);
+		if(clientheight + scrollTop >= wholeHeight){
+			console.log("到底部了！");
+		};
+		if(scrollTop <= 0){
+			console.log("到顶部了！");
+		}
+	})
+</script>
+</html>

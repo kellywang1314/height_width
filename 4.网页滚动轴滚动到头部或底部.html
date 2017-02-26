@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>整个网页滚动轴滚动到头部或底部</title>
+</head>
+<body>
+	<div id="scrollDiv"></div>
+</body>
+<style>
+	#scrollDiv{
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin: 1000px auto 100px auto;
+	}
+</style>
+<script>
+	function scrollTopOrBottom(){
+		var showId = document.getElementById("scrollDiv");
+		var clientheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var scrollTop = document.body.scrollTop;
+		var wholeHeight = document.body.scrollHeight;
+		if(clientheight + scrollTop >= wholeHeight){
+			console.log("到底部了！");
+		};
+		if(scrollTop <= 0){
+			console.log("到顶部了！");
+		}
+
+	}
+	window.onscroll = scrollTopOrBottom;
+</script>
+</html>

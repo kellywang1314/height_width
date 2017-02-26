@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div滚动轴滚动到头部或底部</title>
+</head>
+<body>
+	<div id="scrollDiv">
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</div>
+</body>
+<style>
+	#scrollDiv{
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin: 100px auto 100px auto;
+		padding: 10px;
+		overflow-y: scroll;
+	}
+</style>
+<script>
+	var showId = document.getElementById("scrollDiv");
+	function scrollTopOrBottom(){
+		//var clientheight = showId.style.height;    //值为空，取不到值,因为取的是内联元素的值,而内联style未定义
+		var clientheight = showId.clientHeight;  
+		console.log(clientheight);
+		var scrollTop = showId.scrollTop;
+		var wholeHeight = showId.scrollHeight;
+		if(clientheight + scrollTop >= wholeHeight){
+			console.log("到底部了！");
+		};
+		if(scrollTop <= 0){
+			console.log("到顶部了！");
+		}
+
+	}
+	showId.onscroll = scrollTopOrBottom;
+</script>
+</html>

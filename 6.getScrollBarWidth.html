@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取滚动轴宽度</title>
+</head>
+<body>
+	<p></p>
+</body>
+<script>
+	function getScrollBarWidth(){
+		var el = document.createElement("div"),
+		    styles = {
+		    	width:"100px",
+		    	height:"100px",
+		    	background:"red"
+		    },i,clientWidth1,clientWidth2,scrollBarWidth;
+		for(i in styles){
+			el.style[i] = styles[i]
+		}
+		document.body.appendChild(el);
+		clientWidth1 = el.clientWidth;
+		el.style.overflowY = "scroll";
+		clientWidth2 = el.clientWidth;
+
+		var scrollBarWidth = clientWidth1 - clientWidth2;
+		el.remove();
+		return scrollBarWidth;
+	}
+	console.log(getScrollBarWidth());
+</script>
+</html>

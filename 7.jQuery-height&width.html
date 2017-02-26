@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-height&width</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body,html{
+			margin: 10px;
+			border: 10px solid red;
+			padding: 20px;
+		}
+		#parentDiv{
+			margin: 30px auto;
+			border: 20px solid #e5e5e5;
+			padding: 10px;
+			height: 200px;
+			width: 200px;
+			position: relative;
+		}
+		#childDiv{
+			margin: 20px auto;
+			border: 20px solid #e5e5e5;
+			padding: 30px;
+			height: 40px;
+			width: 40px;
+			background: blue;
+			overflow-y: scroll;
+		}
+	</style>
+	<script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div id="parentDiv">
+		<div id="childDiv">
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	console.log("------------------------");
+	console.log('windowHeight:'+$(window).height());
+	console.log('documentHeight:'+$(document).height()); 
+	console.log("------------------------");
+	console.log('windowInnerHeight:'+$(window).innerHeight());
+	console.log('documentInnerHeight:'+$(document).innerHeight());
+	console.log("------------------------");
+	console.log('windowOuterHeight:'+$(window).outerHeight());
+	console.log('documentOuterHeight:'+$(document).outerHeight());
+	console.log("----------#childDiv--------------");
+	console.log('#childDivHeight:'+$('#childDiv').height());
+	console.log('#childDivHeight(css):'+$('#childDiv').css('height'));
+	console.log('#childDivInnerHeight:'+$('#childDiv').innerHeight());
+	console.log('#childDivOuterHeight:'+$('#childDiv').outerHeight());
+	console.log('#childDivOuterHeight(true):'+$('#childDiv').outerHeight(true));
+
+	$("#childDiv").scroll(function(){
+		console.log("childDivScrollTop:" + $(this).scrollTop());
+	})
+	console.log("------------------------");
+	console.log('#childDivOffsetLeft:'+$('#childDiv').offset().left);
+	console.log('#childDivOffsetTop:'+$('#childDiv').offset().top);
+	console.log("------------------------");
+	console.log('#childDivPositionLeft:'+$('#childDiv').position().left);
+	console.log('#childDivPositionTop:'+$('#childDiv').position().top);
+</script>
+</html>

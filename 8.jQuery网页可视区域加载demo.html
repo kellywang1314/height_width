@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>可视区域加载demo</title>
+	<script src="jquery-1.8.3.min.js"></script>
 </head>
 <body>
 	<div id="showDiv"></div>
@@ -38,14 +39,12 @@
 	}
 </style>
 <script>
-	function showDiv(){
-		var showId = document.getElementById("showDiv");
-		var clientheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		var divTop = showId.getBoundingClientRect().top;
+	$(window).scroll(function(){
+		var clientheight = $(window).height();
+		var divTop = $("#showDiv").position().top;   
 		if(divTop <= clientheight){
-			showId.classList.add("fadeInLeft");
+			$("#showDiv").addClass("fadeInLeft");
 		}
-	}
-	window.onscroll = showDiv;
+	})
 </script>
 </html>
